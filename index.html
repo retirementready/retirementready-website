@@ -287,57 +287,106 @@
       }
 
       .hero-inner {
-        min-height: 600px;
-        padding: 32px 0 46px;
+        min-height: 570px;
+        padding: 30px 0 42px;
       }
 
       .logo {
         width: 100%;
         max-width: 520px;
-        margin-bottom: 18px;
+        margin-bottom: 16px;
       }
 
       .tagline {
-        margin-bottom: 22px;
+        margin-bottom: 18px;
         font-size: clamp(1.8rem, 8.7vw, 2.5rem);
         line-height: 1.08;
         letter-spacing: -0.035em;
       }
 
       .lead {
-        font-size: 1.04rem;
-        line-height: 1.62;
+        margin-bottom: 22px;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .pill-row {
+        gap: 7px;
+        margin-bottom: 26px;
+      }
+
+      .pill {
+        padding: 6px 9px;
+        font-size: 0.78rem;
+      }
+
+      .cta-link {
+        min-height: 46px;
+        padding: 0 18px;
+        font-size: 0.95rem;
       }
 
       .section {
-        padding: 58px 0;
+        padding: 54px 0;
       }
 
       .eyebrow {
-        margin-bottom: 10px;
-        font-size: 1rem;
+        margin-bottom: 9px;
+        font-size: 0.94rem;
         line-height: 1.25;
         letter-spacing: 0.08em;
       }
 
       h2 {
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         font-size: clamp(1.85rem, 8.2vw, 2.45rem);
         line-height: 1.12;
         letter-spacing: -0.025em;
       }
 
+      .section-intro {
+        margin-bottom: 30px;
+        font-size: 1.03rem;
+        line-height: 1.58;
+      }
+
       .cards {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
 
       .card,
       .waitlist-card {
-        padding: 22px;
+        padding: 20px;
+      }
+
+      .card h3 {
+        margin-bottom: 6px;
+      }
+
+      .card p {
+        font-size: 0.97rem;
+        line-height: 1.5;
+      }
+
+      .waitlist-wrap {
+        gap: 28px;
+      }
+
+      .waitlist-copy p {
+        font-size: 1rem;
+        line-height: 1.55;
       }
 
       .waitlist-card h3 {
-        font-size: 1.32rem;
+        font-size: 1.28rem;
+        line-height: 1.28;
+      }
+
+      .waitlist-card > p {
+        margin-bottom: 14px;
+        font-size: 0.97rem;
+        line-height: 1.5;
       }
     }
   </style>
@@ -356,7 +405,7 @@
         <h1 class="tagline">A more confident tomorrow.</h1>
 
         <p class="lead">
-          RetirementReady is being built to help you understand the choices that shape retirement — and how decisions about timing, Social Security, taxes, spending, healthcare, and legacy goals interact over time.
+          RetirementReady is being built to help you understand how retirement timing, Social Security, taxes, spending, healthcare, and legacy goals work together.
         </p>
 
         <div class="pill-row" aria-label="RetirementReady focus areas">
@@ -379,38 +428,38 @@
         <p class="eyebrow">Prepared for the journey ahead</p>
         <h2>Retirement is more than a single number.</h2>
         <p class="section-intro">
-          A strong retirement plan connects the decisions that matter instead of treating them in isolation. RetirementReady is designed to help you explore the tradeoffs, compare alternatives, and understand what changes when one assumption changes another.
+          A strong retirement plan connects the decisions that matter. RetirementReady is designed to help you compare alternatives and see how changing one assumption can affect the rest of the plan.
         </p>
 
         <div class="cards">
           <article class="card">
             <h3>When can I retire?</h3>
-            <p>Explore how retirement timing affects income, spending, portfolio longevity, taxes, and healthcare.</p>
+            <p>See how retirement timing affects income, spending, taxes, healthcare, and portfolio longevity.</p>
           </article>
 
           <article class="card">
             <h3>When should I claim Social Security?</h3>
-            <p>Compare claiming ages and understand how one spouse's decision can affect the household and survivor.</p>
+            <p>Compare claiming ages and see how one spouse's decision can affect the household and survivor.</p>
           </article>
 
           <article class="card">
             <h3>Should I convert to Roth?</h3>
-            <p>Evaluate Roth conversions in the context of taxes, RMDs, Medicare premiums, healthcare subsidies, and long-term outcomes.</p>
+            <p>Evaluate Roth conversions alongside taxes, RMDs, Medicare premiums, and healthcare subsidies.</p>
           </article>
 
           <article class="card">
             <h3>How much can I spend?</h3>
-            <p>Connect spending choices to sustainable withdrawals and the lifestyle you want retirement to support.</p>
+            <p>Connect spending choices to sustainable withdrawals and the lifestyle you want to support.</p>
           </article>
 
           <article class="card">
             <h3>What could healthcare cost?</h3>
-            <p>Account for the transition into retirement, pre-Medicare coverage, Medicare, and income-related premium effects.</p>
+            <p>Plan for pre-Medicare coverage, Medicare, and income-related premium effects.</p>
           </article>
 
           <article class="card">
             <h3>What happens after one spouse dies?</h3>
-            <p>Understand survivor income, taxes, spending needs, and how today's decisions may affect the spouse who remains.</p>
+            <p>Understand survivor income, taxes, spending needs, and the impact of today's decisions.</p>
           </article>
         </div>
       </div>
@@ -428,7 +477,7 @@
 
         <div class="waitlist-card">
           <h3>Get on the RetirementReady early access list</h3>
-          <p>Enter your email below. We'll only contact you with relevant RetirementReady updates and early-access information.</p>
+          <p>Enter your email below for relevant RetirementReady updates and early-access information.</p>
 
           <script async data-uid="6d9b7eb27b" src="https://retirementready.kit.com/6d9b7eb27b/index.js"></script>
 
