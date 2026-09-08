@@ -2,32 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>RetirementReady | Retirement Decisions Made with Confidence</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetirementReady | A More Confident Tomorrow</title>
   <meta
     name="description"
-    content="RetirementReady is an upcoming retirement planning platform designed to show how taxes, healthcare, Social Security, Roth conversions, RMDs, and portfolio decisions interact."
+    content="RetirementReady helps you navigate the retirement journey ahead with practical guidance on retirement timing, Social Security, taxes, Roth conversions, spending, healthcare, and legacy planning."
   >
 
   <style>
+    :root {
+      --navy: #071f3a;
+      --navy-soft: #16324f;
+      --blue: #198ed8;
+      --blue-dark: #126da8;
+      --ink: #12233a;
+      --muted: #5f6f82;
+      --line: #dfe7ef;
+      --paper: #ffffff;
+      --wash: #f4f8fb;
+    }
+
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-      background: #f6f8fb;
-      color: #172033;
+      color: var(--ink);
+      background: var(--paper);
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -36,137 +42,380 @@
         Helvetica,
         Arial,
         sans-serif;
-    }
-
-    main {
-      width: 100%;
-      max-width: 820px;
-      padding: 64px;
-      background: #ffffff;
-      border: 1px solid #e5e9f0;
-      border-radius: 20px;
-      box-shadow: 0 18px 50px rgba(23, 32, 51, 0.08);
-    }
-
-    .brand {
-      margin-bottom: 32px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    h1 {
-      max-width: 680px;
-      margin: 0 0 24px;
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-    }
-
-    .intro {
-      max-width: 690px;
-      margin-bottom: 32px;
-      color: #4e596d;
-      font-size: 1.2rem;
-      line-height: 1.7;
-    }
-
-    .questions {
-      margin: 32px 0;
-      padding: 28px 32px;
-      background: #f6f8fb;
-      border-radius: 14px;
-    }
-
-    .questions p {
-      margin: 0 0 14px;
-      font-weight: 700;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 22px;
-      color: #4e596d;
-      line-height: 1.8;
-    }
-
-    .coming-soon {
-      display: inline-block;
-      margin: 8px 0 22px;
-      padding: 10px 16px;
-      border: 1px solid #cfd6e2;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      line-height: 1.6;
     }
 
     a {
-      color: #172033;
+      color: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 35%, rgba(255,255,255,0.45) 60%, rgba(255,255,255,0.08) 100%),
+        url("rr-website-hero.png") center center / cover no-repeat;
+      border-bottom: 1px solid rgba(7, 31, 58, 0.08);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      min-height: 720px;
+      padding: 64px 0 72px;
+    }
+
+    .hero-copy {
+      width: min(680px, 72%);
+    }
+
+    .logo {
+      display: block;
+      width: min(570px, 90%);
+      height: auto;
+      margin-bottom: 26px;
+    }
+
+    .tagline {
+      margin: 0 0 26px;
+      font-size: clamp(2.3rem, 5vw, 4.9rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+      color: var(--navy);
+      font-weight: 780;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 0 0 30px;
+      color: #41546a;
+      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border: 1px solid rgba(7, 31, 58, 0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.74);
+      color: var(--navy-soft);
+      font-size: 0.86rem;
       font-weight: 700;
+      letter-spacing: 0.015em;
+      backdrop-filter: blur(3px);
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 10px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(25, 142, 216, 0.23);
+    }
+
+    .cta-link:hover,
+    .cta-link:focus-visible {
+      background: var(--blue-dark);
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section.alt {
+      background: var(--wash);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin: 0 0 38px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(18, 35, 58, 0.05);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.08rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .waitlist-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .waitlist-copy p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .waitlist-card {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 18px 42px rgba(18, 35, 58, 0.08);
+    }
+
+    .waitlist-card h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.45rem;
+    }
+
+    .waitlist-card > p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .privacy {
+      margin: 14px 0 0;
+      color: #7c8998;
+      font-size: 0.82rem;
     }
 
     footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid #e5e9f0;
-      color: #778196;
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      color: #708093;
       font-size: 0.9rem;
     }
 
-    @media (max-width: 640px) {
-      main {
-        padding: 40px 28px;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-inner a {
+      color: var(--navy-soft);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.5) 100%),
+          url("rr-website-hero.png") center center / cover no-repeat;
       }
 
-      .questions {
-        padding: 24px;
+      .hero-inner {
+        min-height: 680px;
+        padding: 54px 0 72px;
+      }
+
+      .hero-copy {
+        width: 100%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .waitlist-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero-inner {
+        min-height: 620px;
+        padding: 36px 0 48px;
+      }
+
+      .logo {
+        width: 100%;
+        max-width: 470px;
+      }
+
+      .tagline {
+        font-size: clamp(2.2rem, 12vw, 3.5rem);
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .waitlist-card {
+        padding: 22px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <div class="brand">RetirementReady</div>
+  <header class="hero">
+    <div class="shell hero-inner">
+      <div class="hero-copy">
+        <img
+          class="logo"
+          src="rr-logo-horizontal.png"
+          alt="RetirementReady"
+        >
 
-    <h1>Retirement decisions made with confidence.</h1>
+        <h1 class="tagline">A more confident tomorrow.</h1>
 
-    <p class="intro">
-      RetirementReady is an upcoming retirement planning platform designed
-      to help individuals understand how taxes, Social Security, healthcare,
-      Medicare, Roth conversions, Required Minimum Distributions, investment
-      withdrawals, and survivor planning interact throughout retirement.
-    </p>
+        <p class="lead">
+          RetirementReady is being built to help you understand the choices that shape retirement — and how decisions about timing, Social Security, taxes, spending, healthcare, and legacy goals interact over time.
+        </p>
 
-    <div class="questions">
-      <p>RetirementReady is being built to help answer questions such as:</p>
+        <div class="pill-row" aria-label="RetirementReady focus areas">
+          <span class="pill">Retirement</span>
+          <span class="pill">Social Security</span>
+          <span class="pill">Taxes</span>
+          <span class="pill">Spending</span>
+          <span class="pill">Healthcare</span>
+          <span class="pill">Legacy</span>
+        </div>
 
-      <ul>
-        <li>When can I confidently retire?</li>
-        <li>How will healthcare costs affect an early-retirement plan?</li>
-        <li>How much should I convert to a Roth each year?</li>
-        <li>How could Roth conversions affect ACA subsidies?</li>
-        <li>Will Medicare IRMAA increase future premiums?</li>
-        <li>When should I claim Social Security?</li>
-        <li>How will RMDs affect taxes and portfolio withdrawals?</li>
-        <li>What changes financially after the death of one spouse?</li>
-      </ul>
+        <a class="cta-link" href="#early-access">Join the Early Access Waitlist</a>
+      </div>
     </div>
+  </header>
 
-    <div class="coming-soon">Coming Soon</div>
+  <main>
+    <section class="section">
+      <div class="shell">
+        <p class="eyebrow">Prepared for the journey ahead</p>
+        <h2>Retirement is more than a single number.</h2>
+        <p class="section-intro">
+          A strong retirement plan connects the decisions that matter instead of treating them in isolation. RetirementReady is designed to help you explore the tradeoffs, compare alternatives, and understand what changes when one assumption changes another.
+        </p>
 
-    <p>
-      Contact:
-      <a href="mailto:hello@retirementready.me">
-        hello@retirementready.me
-      </a>
-    </p>
+        <div class="cards">
+          <article class="card">
+            <h3>When can I retire?</h3>
+            <p>Explore how retirement timing affects income, spending, portfolio longevity, taxes, and healthcare.</p>
+          </article>
 
-    <footer>
-      &copy; 2026 RetirementReady
-    </footer>
+          <article class="card">
+            <h3>When should I claim Social Security?</h3>
+            <p>Compare claiming ages and understand how one spouse's decision can affect the household and survivor.</p>
+          </article>
+
+          <article class="card">
+            <h3>Should I convert to Roth?</h3>
+            <p>Evaluate Roth conversions in the context of taxes, RMDs, Medicare premiums, healthcare subsidies, and long-term outcomes.</p>
+          </article>
+
+          <article class="card">
+            <h3>How much can I spend?</h3>
+            <p>Connect spending choices to sustainable withdrawals and the lifestyle you want retirement to support.</p>
+          </article>
+
+          <article class="card">
+            <h3>What could healthcare cost?</h3>
+            <p>Account for the transition into retirement, pre-Medicare coverage, Medicare, and income-related premium effects.</p>
+          </article>
+
+          <article class="card">
+            <h3>What happens after one spouse dies?</h3>
+            <p>Understand survivor income, taxes, spending needs, and how today's decisions may affect the spouse who remains.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="early-access">
+      <div class="shell waitlist-wrap">
+        <div class="waitlist-copy">
+          <p class="eyebrow">Early access</p>
+          <h2>Join the waitlist.</h2>
+          <p>
+            We're preparing for a limited early-access release. Join the waitlist to be among the first households invited to try RetirementReady and help shape what comes next.
+          </p>
+        </div>
+
+        <div class="waitlist-card">
+          <h3>Get on the RetirementReady early access list</h3>
+          <p>Enter your email below. We'll only contact you with relevant RetirementReady updates and early-access information.</p>
+
+          <script async data-uid="6d9b7eb27b" src="https://retirementready.kit.com/6d9b7eb27b/index.js"></script>
+
+          <p class="privacy">Occasional RetirementReady updates. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>&copy; 2026 RetirementReady</span>
+      <span>Questions? <a href="mailto:hello@retirementready.me">hello@retirementready.me</a></span>
+    </div>
+  </footer>
 </body>
 </html>
