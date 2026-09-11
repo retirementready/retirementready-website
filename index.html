@@ -19,30 +19,31 @@
     .tagline { margin:0 0 26px; font-size:clamp(2.3rem,5vw,4.9rem); line-height:1.03; letter-spacing:-.045em; color:var(--navy); font-weight:780; }
     .lead { max-width:640px; margin:0 0 30px; color:#41546a; font-size:clamp(1.08rem,1.8vw,1.28rem); line-height:1.7; }
     .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px; }
-    .pill { padding:8px 12px; border:1px solid rgba(7,31,58,.14); border-radius:999px; background:rgba(255,255,255,.74); color:var(--navy-soft); font-size:.86rem; font-weight:700; letter-spacing:.015em; backdrop-filter:blur(3px); }
-    .cta-link { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:800; box-shadow:0 10px 28px rgba(25,142,216,.23); }
+    .pill { padding:8px 12px; border:1px solid rgba(7, 31, 58, 0.14); border-radius:999px; background:rgba(255,255,255,0.74); color:var(--navy-soft); font-size:0.86rem; font-weight:700; letter-spacing:0.015em; backdrop-filter:blur(3px); }
+    .cta-link { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:800; box-shadow:0 10px 28px rgba(25,142,216,0.23); }
     .cta-link:hover,.cta-link:focus-visible { background:var(--blue-dark); }
     .section { padding:84px 0; }
     .section.alt { background:var(--wash); }
-    .eyebrow { margin:0 0 12px; color:var(--blue-dark); font-size:.82rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
-    h2 { margin:0 0 18px; color:var(--navy); font-size:clamp(2rem,4vw,3.25rem); line-height:1.1; letter-spacing:-.035em; }
+    .eyebrow { margin:0 0 12px; color:var(--blue-dark); font-size:0.82rem; font-weight:800; letter-spacing:0.13em; text-transform:uppercase; }
+    h2 { margin:0 0 18px; color:var(--navy); font-size:clamp(2rem,4vw,3.25rem); line-height:1.1; letter-spacing:-0.035em; }
     .section-intro { max-width:760px; margin:0 0 38px; color:var(--muted); font-size:1.12rem; }
     .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-    .card { padding:26px; border:1px solid var(--line); border-radius:16px; background:#fff; box-shadow:0 12px 28px rgba(18,35,58,.05); }
+    .card { padding:26px; border:1px solid var(--line); border-radius:16px; background:#fff; box-shadow:0 12px 28px rgba(18,35,58,0.05); }
     .card h3 { margin:0 0 8px; color:var(--navy); font-size:1.08rem; }
     .card p { margin:0; color:var(--muted); }
-    .waitlist-wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; }
+    .waitlist-wrap { display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center; }
     .waitlist-copy p { max-width:620px; color:var(--muted); font-size:1.08rem; }
-    .waitlist-card { padding:30px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 18px 42px rgba(18,35,58,.08); }
+    .waitlist-card { padding:30px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 18px 42px rgba(18,35,58,0.08); }
     .waitlist-card h3 { margin:0 0 8px; color:var(--navy); font-size:1.45rem; }
     .waitlist-card>p { margin:0 0 18px; color:var(--muted); }
-    .privacy { margin:14px 0 0; color:#7c8998; font-size:.82rem; }
-    footer { padding:42px 0 44px; border-top:1px solid var(--line); background:#fff; color:#708093; font-size:.9rem; }
+    .privacy { margin:14px 0 0; color:#7c8998; font-size:0.82rem; }
+    [data-early-access-prompt][hidden] { display:none !important; }
+    footer { padding:42px 0 44px; border-top:1px solid var(--line); background:#fff; color:#708093; font-size:0.9rem; }
     .footer-inner { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; }
     .footer-logo { display:block; width:min(640px,92vw); height:auto; }
     .social-links { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:4px; }
-    .social-links a { display:inline-flex; width:46px; height:46px; align-items:center; justify-content:center; border-radius:50%; text-decoration:none; transition:transform .15s ease,opacity .15s ease; }
-    .social-links a:hover,.social-links a:focus-visible { transform:translateY(-2px); opacity:.88; }
+    .social-links a { display:inline-flex; width:46px; height:46px; align-items:center; justify-content:center; border-radius:50%; text-decoration:none; transition:transform 0.15s ease,opacity 0.15s ease; }
+    .social-links a:hover,.social-links a:focus-visible { transform:translateY(-2px); opacity:0.88; }
     .social-links svg { width:46px; height:46px; display:block; }
     .footer-divider { width:100%; border:0; border-top:1px solid var(--line); margin:4px 0 0; }
     .footer-meta { display:flex; flex-direction:column; gap:4px; }
@@ -58,23 +59,23 @@
       .shell { width:min(100% - 28px,1180px); }
       .hero-inner { min-height:570px; padding:30px 0 42px; }
       .logo { width:100%; max-width:520px; margin-bottom:16px; }
-      .tagline { margin-bottom:18px; font-size:clamp(1.8rem,8.7vw,2.5rem); line-height:1.08; letter-spacing:-.035em; }
+      .tagline { margin-bottom:18px; font-size:clamp(1.8rem,8.7vw,2.5rem); line-height:1.08; letter-spacing:-0.035em; }
       .lead { margin-bottom:22px; font-size:1rem; line-height:1.55; }
       .pill-row { gap:7px; margin-bottom:26px; }
-      .pill { padding:6px 9px; font-size:.78rem; }
-      .cta-link { min-height:46px; padding:0 18px; font-size:.95rem; }
+      .pill { padding:6px 9px; font-size:0.78rem; }
+      .cta-link { min-height:46px; padding:0 18px; font-size:0.95rem; }
       .section { padding:54px 0; }
-      .eyebrow { margin-bottom:9px; font-size:.94rem; line-height:1.25; letter-spacing:.08em; }
-      h2 { margin-bottom:14px; font-size:clamp(1.85rem,8.2vw,2.45rem); line-height:1.12; letter-spacing:-.025em; }
+      .eyebrow { margin-bottom:9px; font-size:0.94rem; line-height:1.25; letter-spacing:0.08em; }
+      h2 { margin-bottom:14px; font-size:clamp(1.85rem,8.2vw,2.45rem); line-height:1.12; letter-spacing:-0.025em; }
       .section-intro { margin-bottom:30px; font-size:1.03rem; line-height:1.58; }
       .cards { grid-template-columns:1fr; gap:14px; }
       .card,.waitlist-card { padding:20px; }
       .card h3 { margin-bottom:6px; }
-      .card p { font-size:.97rem; line-height:1.5; }
+      .card p { font-size:0.97rem; line-height:1.5; }
       .waitlist-wrap { gap:28px; }
       .waitlist-copy p { font-size:1rem; line-height:1.55; }
       .waitlist-card h3 { font-size:1.28rem; line-height:1.28; }
-      .waitlist-card>p { margin-bottom:14px; font-size:.97rem; line-height:1.5; }
+      .waitlist-card>p { margin-bottom:14px; font-size:0.97rem; line-height:1.5; }
       footer { padding:34px 0 38px; }
       .footer-inner { gap:14px; }
       .footer-logo { width:min(560px,94vw); }
@@ -91,13 +92,13 @@
         <h1 class="tagline">A more confident tomorrow.</h1>
         <p class="lead">RetirementReady is being built to help you understand how retirement timing, Social Security, taxes, spending, healthcare, and legacy goals work together.</p>
         <div class="pill-row" aria-label="RetirementReady focus areas"><span class="pill">Retirement</span><span class="pill">Social Security</span><span class="pill">Taxes</span><span class="pill">Spending</span><span class="pill">Healthcare</span><span class="pill">Legacy</span></div>
-        <a class="cta-link" href="#early-access">Join the Early Access Waitlist</a>
+        <a class="cta-link" data-early-access-prompt href="#early-access">Join the Early Access Waitlist</a>
       </div>
     </div>
   </header>
   <main>
     <section class="section"><div class="shell"><p class="eyebrow">Prepared for the journey ahead</p><h2>Retirement is more than a single number.</h2><p class="section-intro">A strong retirement plan connects the decisions that matter. RetirementReady is designed to help you compare alternatives and see how changing one assumption can affect the rest of the plan.</p><div class="cards"><article class="card"><h3>When can I retire?</h3><p>See how retirement timing affects income, spending, taxes, healthcare, and portfolio longevity.</p></article><article class="card"><h3>When should I claim Social Security?</h3><p>Compare claiming ages and see how one spouse's decision can affect the household and survivor.</p></article><article class="card"><h3>Should I convert to Roth?</h3><p>Evaluate Roth conversions alongside taxes, RMDs, Medicare premiums, and healthcare subsidies.</p></article><article class="card"><h3>How much can I spend?</h3><p>Connect spending choices to sustainable withdrawals and the lifestyle you want to support.</p></article><article class="card"><h3>What could healthcare cost?</h3><p>Plan for pre-Medicare coverage, Medicare, and income-related premium effects.</p></article><article class="card"><h3>What happens after one spouse dies?</h3><p>Understand survivor income, taxes, spending needs, and the impact of today's decisions.</p></article></div></div></section>
-    <section class="section alt" id="early-access"><div class="shell waitlist-wrap"><div class="waitlist-copy"><p class="eyebrow">Early access</p><h2>Join the waitlist.</h2><p>We're preparing for a limited early-access release. Join the waitlist to be among the first households invited to try RetirementReady and help shape what comes next.</p></div><div class="waitlist-card"><h3>Get on the RetirementReady early access list</h3><p>Enter your email below for relevant RetirementReady updates and early-access information.</p><script async data-uid="6d9b7eb27b" src="https://retirementready.kit.com/6d9b7eb27b/index.js"></script><p class="privacy">Occasional RetirementReady updates. Unsubscribe anytime.</p></div></div></section>
+    <section class="section alt" id="early-access" data-early-access-prompt><div class="shell waitlist-wrap"><div class="waitlist-copy"><p class="eyebrow">Early access</p><h2>Join the waitlist.</h2><p>We're preparing for a limited early-access release. Join the waitlist to be among the first households invited to try RetirementReady and help shape what comes next.</p></div><div class="waitlist-card"><h3>Get on the RetirementReady early access list</h3><p>Enter your email below for relevant RetirementReady updates and early-access information.</p><script id="early-access-kit-script" async data-uid="6d9b7eb27b" src="https://retirementready.kit.com/6d9b7eb27b/index.js"></script><p class="privacy">Occasional RetirementReady updates. Unsubscribe anytime.</p></div></div></section>
   </main>
   <footer>
     <div class="shell footer-inner">
@@ -111,5 +112,36 @@
       <div class="footer-meta"><span>&copy; 2026 RetirementReady LLC</span><span>Questions? <a href="mailto:hello@retirementready.me">hello@retirementready.me</a></span></div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var storageKey = 'rr_early_access_joined_v1';
+      var waitlist = document.getElementById('early-access');
+
+      function hideEarlyAccessPrompts() {
+        document.querySelectorAll('[data-early-access-prompt]').forEach(function (element) {
+          element.hidden = true;
+        });
+        try { localStorage.setItem(storageKey, '1'); } catch (e) {}
+      }
+
+      try {
+        if (localStorage.getItem(storageKey) === '1') hideEarlyAccessPrompts();
+      } catch (e) {}
+
+      document.addEventListener('submit', function (event) {
+        if (waitlist && waitlist.contains(event.target)) {
+          window.setTimeout(hideEarlyAccessPrompts, 250);
+        }
+      }, true);
+
+      window.addEventListener('load', function () {
+        window.setTimeout(function () {
+          if (!waitlist || waitlist.hidden) return;
+          var formPresent = waitlist.querySelector('form, input[type="email"], iframe');
+          if (!formPresent) hideEarlyAccessPrompts();
+        }, 900);
+      });
+    })();
+  </script>
 </body>
 </html>
