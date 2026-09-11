@@ -4,493 +4,145 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RetirementReady | A More Confident Tomorrow</title>
-  <meta
-    name="description"
-    content="RetirementReady helps you navigate the retirement journey ahead with practical guidance on retirement timing, Social Security, taxes, Roth conversions, spending, healthcare, and legacy planning."
-  >
-
+  <meta name="description" content="RetirementReady helps you navigate the retirement journey ahead with practical guidance on retirement timing, Social Security, taxes, Roth conversions, spending, healthcare, and legacy planning.">
   <style>
-    :root {
-      --navy: #071f3a;
-      --navy-soft: #16324f;
-      --blue: #198ed8;
-      --blue-dark: #126da8;
-      --ink: #12233a;
-      --muted: #5f6f82;
-      --line: #dfe7ef;
-      --paper: #ffffff;
-      --wash: #f4f8fb;
+    :root { --navy:#071f3a; --navy-soft:#16324f; --blue:#198ed8; --blue-dark:#126da8; --ink:#12233a; --muted:#5f6f82; --line:#dfe7ef; --paper:#fff; --wash:#f4f8fb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+    a { color:inherit; }
+    .shell { width:min(1180px,calc(100% - 40px)); margin:0 auto; }
+    .hero { position:relative; min-height:720px; display:flex; align-items:stretch; overflow:hidden; background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 35%,rgba(255,255,255,.45) 60%,rgba(255,255,255,.08) 100%),url("rr-website-hero.png") center center/cover no-repeat; border-bottom:1px solid rgba(7,31,58,.08); }
+    .hero-inner { display:flex; align-items:center; min-height:720px; padding:64px 0 72px; }
+    .hero-copy { width:min(680px,72%); }
+    .logo { display:block; width:min(570px,90%); height:auto; margin-bottom:26px; }
+    .tagline { margin:0 0 26px; font-size:clamp(2.3rem,5vw,4.9rem); line-height:1.03; letter-spacing:-.045em; color:var(--navy); font-weight:780; }
+    .lead { max-width:640px; margin:0 0 30px; color:#41546a; font-size:clamp(1.08rem,1.8vw,1.28rem); line-height:1.7; }
+    .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:34px; }
+    .pill { padding:8px 12px; border:1px solid rgba(7,31,58,.14); border-radius:999px; background:rgba(255,255,255,.74); color:var(--navy-soft); font-size:.86rem; font-weight:700; letter-spacing:.015em; backdrop-filter:blur(3px); }
+    .cta-link { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 22px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:800; box-shadow:0 10px 28px rgba(25,142,216,.23); }
+    .cta-link:hover,.cta-link:focus-visible { background:var(--blue-dark); }
+    .section { padding:84px 0; }
+    .section.alt { background:var(--wash); }
+    .eyebrow { margin:0 0 12px; color:var(--blue-dark); font-size:.82rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    h2 { margin:0 0 18px; color:var(--navy); font-size:clamp(2rem,4vw,3.25rem); line-height:1.1; letter-spacing:-.035em; }
+    .section-intro { max-width:760px; margin:0 0 38px; color:var(--muted); font-size:1.12rem; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .card { padding:26px; border:1px solid var(--line); border-radius:16px; background:#fff; box-shadow:0 12px 28px rgba(18,35,58,.05); }
+    .card h3 { margin:0 0 8px; color:var(--navy); font-size:1.08rem; }
+    .card p { margin:0; color:var(--muted); }
+    .waitlist-wrap { display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; }
+    .waitlist-copy p { max-width:620px; color:var(--muted); font-size:1.08rem; }
+    .waitlist-card { padding:30px; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 18px 42px rgba(18,35,58,.08); }
+    .waitlist-card h3 { margin:0 0 8px; color:var(--navy); font-size:1.45rem; }
+    .waitlist-card>p { margin:0 0 18px; color:var(--muted); }
+    .privacy { margin:14px 0 0; color:#7c8998; font-size:.82rem; }
+    footer { padding:42px 0 44px; border-top:1px solid var(--line); background:#fff; color:#708093; font-size:.9rem; }
+    .footer-inner { display:grid; grid-template-columns:1fr auto; gap:28px 40px; align-items:end; }
+    .footer-brand { display:flex; flex-direction:column; gap:4px; }
+    .footer-name { color:var(--navy); font-size:1.05rem; font-weight:800; }
+    .footer-tagline { color:var(--muted); font-size:.9rem; }
+    .social-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .social-links a { display:inline-flex; align-items:center; min-height:34px; padding:0 12px; border:1px solid var(--line); border-radius:999px; color:var(--navy-soft); background:#fff; font-size:.84rem; font-weight:750; text-decoration:none; transition:border-color .15s ease,background .15s ease,color .15s ease; }
+    .social-links a:hover,.social-links a:focus-visible { border-color:rgba(25,142,216,.45); background:var(--wash); color:var(--blue-dark); }
+    .footer-meta { display:flex; flex-direction:column; gap:5px; text-align:right; }
+    .footer-meta a { color:var(--navy-soft); font-weight:700; text-decoration:none; }
+    @media (max-width:900px) {
+      .hero { min-height:auto; background:linear-gradient(180deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.9) 60%,rgba(255,255,255,.5) 100%),url("rr-website-hero.png") center center/cover no-repeat; }
+      .hero-inner { min-height:680px; padding:54px 0 72px; }
+      .hero-copy { width:100%; }
+      .cards { grid-template-columns:1fr 1fr; }
+      .waitlist-wrap { grid-template-columns:1fr; }
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .shell {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 720px;
-      display: flex;
-      align-items: stretch;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 35%, rgba(255,255,255,0.45) 60%, rgba(255,255,255,0.08) 100%),
-        url("rr-website-hero.png") center center / cover no-repeat;
-      border-bottom: 1px solid rgba(7, 31, 58, 0.08);
-    }
-
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      min-height: 720px;
-      padding: 64px 0 72px;
-    }
-
-    .hero-copy {
-      width: min(680px, 72%);
-    }
-
-    .logo {
-      display: block;
-      width: min(570px, 90%);
-      height: auto;
-      margin-bottom: 26px;
-    }
-
-    .tagline {
-      margin: 0 0 26px;
-      font-size: clamp(2.3rem, 5vw, 4.9rem);
-      line-height: 1.03;
-      letter-spacing: -0.045em;
-      color: var(--navy);
-      font-weight: 780;
-    }
-
-    .lead {
-      max-width: 640px;
-      margin: 0 0 30px;
-      color: #41546a;
-      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
-      line-height: 1.7;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 34px;
-    }
-
-    .pill {
-      padding: 8px 12px;
-      border: 1px solid rgba(7, 31, 58, 0.14);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.74);
-      color: var(--navy-soft);
-      font-size: 0.86rem;
-      font-weight: 700;
-      letter-spacing: 0.015em;
-      backdrop-filter: blur(3px);
-    }
-
-    .cta-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 10px;
-      background: var(--blue);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 10px 28px rgba(25, 142, 216, 0.23);
-    }
-
-    .cta-link:hover,
-    .cta-link:focus-visible {
-      background: var(--blue-dark);
-    }
-
-    .section {
-      padding: 84px 0;
-    }
-
-    .section.alt {
-      background: var(--wash);
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--blue-dark);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 0 0 18px;
-      color: var(--navy);
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      line-height: 1.1;
-      letter-spacing: -0.035em;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin: 0 0 38px;
-      color: var(--muted);
-      font-size: 1.12rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 12px 28px rgba(18, 35, 58, 0.05);
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      color: var(--navy);
-      font-size: 1.08rem;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .waitlist-wrap {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .waitlist-copy p {
-      max-width: 620px;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .waitlist-card {
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 18px 42px rgba(18, 35, 58, 0.08);
-    }
-
-    .waitlist-card h3 {
-      margin: 0 0 8px;
-      color: var(--navy);
-      font-size: 1.45rem;
-    }
-
-    .waitlist-card > p {
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    .privacy {
-      margin: 14px 0 0;
-      color: #7c8998;
-      font-size: 0.82rem;
-    }
-
-    footer {
-      padding: 32px 0 40px;
-      border-top: 1px solid var(--line);
-      background: #fff;
-      color: #708093;
-      font-size: 0.9rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-inner a {
-      color: var(--navy-soft);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        min-height: auto;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.9) 60%, rgba(255,255,255,0.5) 100%),
-          url("rr-website-hero.png") center center / cover no-repeat;
-      }
-
-      .hero-inner {
-        min-height: 680px;
-        padding: 54px 0 72px;
-      }
-
-      .hero-copy {
-        width: 100%;
-      }
-
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .waitlist-wrap {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .shell {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .hero-inner {
-        min-height: 570px;
-        padding: 30px 0 42px;
-      }
-
-      .logo {
-        width: 100%;
-        max-width: 520px;
-        margin-bottom: 16px;
-      }
-
-      .tagline {
-        margin-bottom: 18px;
-        font-size: clamp(1.8rem, 8.7vw, 2.5rem);
-        line-height: 1.08;
-        letter-spacing: -0.035em;
-      }
-
-      .lead {
-        margin-bottom: 22px;
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .pill-row {
-        gap: 7px;
-        margin-bottom: 26px;
-      }
-
-      .pill {
-        padding: 6px 9px;
-        font-size: 0.78rem;
-      }
-
-      .cta-link {
-        min-height: 46px;
-        padding: 0 18px;
-        font-size: 0.95rem;
-      }
-
-      .section {
-        padding: 54px 0;
-      }
-
-      .eyebrow {
-        margin-bottom: 9px;
-        font-size: 0.94rem;
-        line-height: 1.25;
-        letter-spacing: 0.08em;
-      }
-
-      h2 {
-        margin-bottom: 14px;
-        font-size: clamp(1.85rem, 8.2vw, 2.45rem);
-        line-height: 1.12;
-        letter-spacing: -0.025em;
-      }
-
-      .section-intro {
-        margin-bottom: 30px;
-        font-size: 1.03rem;
-        line-height: 1.58;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-
-      .card,
-      .waitlist-card {
-        padding: 20px;
-      }
-
-      .card h3 {
-        margin-bottom: 6px;
-      }
-
-      .card p {
-        font-size: 0.97rem;
-        line-height: 1.5;
-      }
-
-      .waitlist-wrap {
-        gap: 28px;
-      }
-
-      .waitlist-copy p {
-        font-size: 1rem;
-        line-height: 1.55;
-      }
-
-      .waitlist-card h3 {
-        font-size: 1.28rem;
-        line-height: 1.28;
-      }
-
-      .waitlist-card > p {
-        margin-bottom: 14px;
-        font-size: 0.97rem;
-        line-height: 1.5;
-      }
+    @media (max-width:640px) {
+      .shell { width:min(100% - 28px,1180px); }
+      .hero-inner { min-height:570px; padding:30px 0 42px; }
+      .logo { width:100%; max-width:520px; margin-bottom:16px; }
+      .tagline { margin-bottom:18px; font-size:clamp(1.8rem,8.7vw,2.5rem); line-height:1.08; letter-spacing:-.035em; }
+      .lead { margin-bottom:22px; font-size:1rem; line-height:1.55; }
+      .pill-row { gap:7px; margin-bottom:26px; }
+      .pill { padding:6px 9px; font-size:.78rem; }
+      .cta-link { min-height:46px; padding:0 18px; font-size:.95rem; }
+      .section { padding:54px 0; }
+      .eyebrow { margin-bottom:9px; font-size:.94rem; line-height:1.25; letter-spacing:.08em; }
+      h2 { margin-bottom:14px; font-size:clamp(1.85rem,8.2vw,2.45rem); line-height:1.12; letter-spacing:-.025em; }
+      .section-intro { margin-bottom:30px; font-size:1.03rem; line-height:1.58; }
+      .cards { grid-template-columns:1fr; gap:14px; }
+      .card,.waitlist-card { padding:20px; }
+      .card h3 { margin-bottom:6px; }
+      .card p { font-size:.97rem; line-height:1.5; }
+      .waitlist-wrap { gap:28px; }
+      .waitlist-copy p { font-size:1rem; line-height:1.55; }
+      .waitlist-card h3 { font-size:1.28rem; line-height:1.28; }
+      .waitlist-card>p { margin-bottom:14px; font-size:.97rem; line-height:1.5; }
+      footer { padding:34px 0 38px; }
+      .footer-inner { grid-template-columns:1fr; gap:24px; }
+      .footer-meta { text-align:left; }
+      .social-links { gap:7px; }
+      .social-links a { padding:0 10px; }
     }
   </style>
 </head>
-
 <body>
   <header class="hero">
     <div class="shell hero-inner">
       <div class="hero-copy">
-        <img
-          class="logo"
-          src="rr-logo-horizontal.png"
-          alt="RetirementReady"
-        >
-
+        <img class="logo" src="rr-logo-horizontal.png" alt="RetirementReady">
         <h1 class="tagline">A more confident tomorrow.</h1>
-
-        <p class="lead">
-          RetirementReady is being built to help you understand how retirement timing, Social Security, taxes, spending, healthcare, and legacy goals work together.
-        </p>
-
+        <p class="lead">RetirementReady is being built to help you understand how retirement timing, Social Security, taxes, spending, healthcare, and legacy goals work together.</p>
         <div class="pill-row" aria-label="RetirementReady focus areas">
-          <span class="pill">Retirement</span>
-          <span class="pill">Social Security</span>
-          <span class="pill">Taxes</span>
-          <span class="pill">Spending</span>
-          <span class="pill">Healthcare</span>
-          <span class="pill">Legacy</span>
+          <span class="pill">Retirement</span><span class="pill">Social Security</span><span class="pill">Taxes</span><span class="pill">Spending</span><span class="pill">Healthcare</span><span class="pill">Legacy</span>
         </div>
-
         <a class="cta-link" href="#early-access">Join the Early Access Waitlist</a>
       </div>
     </div>
   </header>
-
   <main>
     <section class="section">
       <div class="shell">
         <p class="eyebrow">Prepared for the journey ahead</p>
         <h2>Retirement is more than a single number.</h2>
-        <p class="section-intro">
-          A strong retirement plan connects the decisions that matter. RetirementReady is designed to help you compare alternatives and see how changing one assumption can affect the rest of the plan.
-        </p>
-
+        <p class="section-intro">A strong retirement plan connects the decisions that matter. RetirementReady is designed to help you compare alternatives and see how changing one assumption can affect the rest of the plan.</p>
         <div class="cards">
-          <article class="card">
-            <h3>When can I retire?</h3>
-            <p>See how retirement timing affects income, spending, taxes, healthcare, and portfolio longevity.</p>
-          </article>
-
-          <article class="card">
-            <h3>When should I claim Social Security?</h3>
-            <p>Compare claiming ages and see how one spouse's decision can affect the household and survivor.</p>
-          </article>
-
-          <article class="card">
-            <h3>Should I convert to Roth?</h3>
-            <p>Evaluate Roth conversions alongside taxes, RMDs, Medicare premiums, and healthcare subsidies.</p>
-          </article>
-
-          <article class="card">
-            <h3>How much can I spend?</h3>
-            <p>Connect spending choices to sustainable withdrawals and the lifestyle you want to support.</p>
-          </article>
-
-          <article class="card">
-            <h3>What could healthcare cost?</h3>
-            <p>Plan for pre-Medicare coverage, Medicare, and income-related premium effects.</p>
-          </article>
-
-          <article class="card">
-            <h3>What happens after one spouse dies?</h3>
-            <p>Understand survivor income, taxes, spending needs, and the impact of today's decisions.</p>
-          </article>
+          <article class="card"><h3>When can I retire?</h3><p>See how retirement timing affects income, spending, taxes, healthcare, and portfolio longevity.</p></article>
+          <article class="card"><h3>When should I claim Social Security?</h3><p>Compare claiming ages and see how one spouse's decision can affect the household and survivor.</p></article>
+          <article class="card"><h3>Should I convert to Roth?</h3><p>Evaluate Roth conversions alongside taxes, RMDs, Medicare premiums, and healthcare subsidies.</p></article>
+          <article class="card"><h3>How much can I spend?</h3><p>Connect spending choices to sustainable withdrawals and the lifestyle you want to support.</p></article>
+          <article class="card"><h3>What could healthcare cost?</h3><p>Plan for pre-Medicare coverage, Medicare, and income-related premium effects.</p></article>
+          <article class="card"><h3>What happens after one spouse dies?</h3><p>Understand survivor income, taxes, spending needs, and the impact of today's decisions.</p></article>
         </div>
       </div>
     </section>
-
     <section class="section alt" id="early-access">
       <div class="shell waitlist-wrap">
         <div class="waitlist-copy">
-          <p class="eyebrow">Early access</p>
-          <h2>Join the waitlist.</h2>
-          <p>
-            We're preparing for a limited early-access release. Join the waitlist to be among the first households invited to try RetirementReady and help shape what comes next.
-          </p>
+          <p class="eyebrow">Early access</p><h2>Join the waitlist.</h2>
+          <p>We're preparing for a limited early-access release. Join the waitlist to be among the first households invited to try RetirementReady and help shape what comes next.</p>
         </div>
-
         <div class="waitlist-card">
           <h3>Get on the RetirementReady early access list</h3>
           <p>Enter your email below for relevant RetirementReady updates and early-access information.</p>
-
           <script async data-uid="6d9b7eb27b" src="https://retirementready.kit.com/6d9b7eb27b/index.js"></script>
-
           <p class="privacy">Occasional RetirementReady updates. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="shell footer-inner">
-      <span>&copy; 2026 RetirementReady</span>
-      <span>Questions? <a href="mailto:hello@retirementready.me">hello@retirementready.me</a></span>
+      <div class="footer-brand">
+        <span class="footer-name">RetirementReady</span>
+        <span class="footer-tagline">A more confident tomorrow.</span>
+        <nav class="social-links" aria-label="Follow RetirementReady">
+          <a href="https://www.facebook.com/RetirementReadyMe/" target="_blank" rel="noopener noreferrer" aria-label="RetirementReady on Facebook">Facebook</a>
+          <a href="https://www.instagram.com/retirementreadyme/" target="_blank" rel="noopener noreferrer" aria-label="RetirementReady on Instagram">Instagram</a>
+          <a href="https://www.threads.net/@retirementreadyme" target="_blank" rel="noopener noreferrer" aria-label="RetirementReady on Threads">Threads</a>
+        </nav>
+      </div>
+      <div class="footer-meta">
+        <span>&copy; 2026 RetirementReady LLC</span>
+        <span>Questions? <a href="mailto:hello@retirementready.me">hello@retirementready.me</a></span>
+      </div>
     </div>
   </footer>
 </body>
