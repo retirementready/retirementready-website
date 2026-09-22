@@ -1,7 +1,7 @@
 # RetirementReady Social Content & Brand Playbook
 
 Status: durable working reference
-Last updated: 2026-09-21
+Last updated: 2026-09-22
 
 ## Purpose
 
@@ -95,6 +95,21 @@ Develop after Series 3. Emphasize that there is no universal magic claiming age.
 ### Objective
 
 Create polished RR social graphics from authentic user-supplied photographs while preserving the photograph itself and avoiding generative reinterpretation of the source image.
+
+### Locked production visual system
+
+The approved Series 1 graphic `IG post 7.png` is the visual reference for future FB/IG production assets.
+
+- **Never use generative image creation/editing for the final social graphic when an authentic RR photograph is supplied.** Final production must use the original photo pixels and deterministic compositing only.
+- **Approved logo lockup:** use the established RR road-mark + “RetirementReady” + canonical tagline treatment from the approved Series 1 assets. Do not substitute a text-only wordmark, invent a new logo, or ask generative AI to redraw it.
+- **Typography:** match the approved Series 1 headline/subhead type family, weight, scale relationship, line spacing, and centered alignment. Do not introduce a new type treatment from post to post.
+- **Headline safe area:** wrap/reduce type as necessary so every line remains inside equal left/right margins. No text may overflow or crowd an edge.
+- **Subhead:** use the established muted blue/gray treatment.
+- **Blue underline:** place the established hand-drawn-style RR blue underline directly beneath the final subhead line, as in the approved Series 1 reference.
+- **Footer:** approved RR logo/tagline at bottom left; `PLAN | EXPLORE | LIVE` at bottom right. Preserve the established relative sizing and spacing.
+- **Photo treatment:** ordinary deterministic crop/resize and restrained contrast overlays are allowed. Do not regenerate, extend, repaint, replace, restyle, or synthesize any portion of the authentic photograph.
+- **Approval workflow:** first lock copy, then compose deterministically, then compare against the approved Series 1 reference for typography, underline, logo/footer, margins, and phone-size readability before publishing.
+- **No generated mockup as production master:** image-generation output may not be substituted for the authentic-photo production asset.
 
 ### Required sequence
 
