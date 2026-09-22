@@ -111,6 +111,69 @@ The approved Series 1 graphic `IG post 7.png` is the visual reference for future
 - **Approval workflow:** first lock copy, then compose deterministically, then compare against the approved Series 1 reference for typography, underline, logo/footer, margins, and phone-size readability before publishing.
 - **No generated mockup as production master:** image-generation output may not be substituted for the authentic-photo production asset.
 
+### Approved FB/IG production template — locked 2026-09-22
+
+Healthcare Post #1 v3 is the accepted production reference for the next social series. Subsequent FB/IG graphics should start from this specification rather than redesigning the system.
+
+**Canvas and source photography**
+- Canvas: **1080 × 1350 px (4:5)**.
+- Use the authentic RR-owned source photograph as the photographic layer.
+- Deterministic crop/resize and restrained readability overlays only.
+- Do **not** use image generation or generative editing for the production asset.
+- Never regenerate, extend, repaint, replace, restyle, or synthesize any portion of the photograph.
+
+**Headline treatment**
+- Heavy sans-serif matching the approved Series 1 visual hierarchy.
+- Center aligned.
+- Navy/dark-blue treatment consistent with approved Series 1 posts.
+- Wrap deliberately into balanced lines; do not allow one line to span nearly the full canvas while adjacent lines are much shorter.
+- Maintain generous, visually equal left/right safe margins on **every** line.
+- Preserve the approved headline-to-subhead scale relationship rather than maximizing type size to fill width.
+
+**Subhead treatment**
+- Regular/lighter sans-serif matching Series 1.
+- Center aligned.
+- Muted blue-gray.
+- Wrap into balanced lines when needed.
+- Keep clear breathing room between headline, subhead, underline, and photograph.
+
+**RR blue underline**
+- Required beneath the final subhead line.
+- Smooth, shallow hand-drawn-style arc.
+- Must be a **filled tapered shape**, not a constant-width stroked/polyline.
+- Thin at both tips, subtly thicker through the center, then taper smoothly back down.
+- No jagged edges or segmented appearance.
+- Match the visual treatment in approved Series 1 Posts #6/#7.
+
+**Footer / brand lockup**
+- Bottom left: the **approved RR logo lockup** (RR road-mark + RetirementReady + canonical tagline “A more confident tomorrow.”).
+- Logo must be a **true transparent overlay**. No rectangular box, halo, photographic patch, substitute text-only wordmark, or regenerated logo.
+- Bottom right: **PLAN | EXPLORE | LIVE**, matching the established Series 1 scale, spacing, and baseline relationship.
+- Use approved source logo assets or a verified transparent extraction from an approved master; never approximate or redraw the logo.
+
+**Quality-control gate before owner review**
+1. Confirm the photograph is the authentic source and has not been generatively altered.
+2. Confirm 1080×1350 output.
+3. Compare headline wrapping/margins against approved Series 1 references.
+4. Confirm subhead hierarchy and blue-gray treatment.
+5. Confirm underline is smooth and tapered.
+6. Confirm logo transparency at 200% zoom—no box/halo/background patch.
+7. Confirm exact tagline and PLAN | EXPLORE | LIVE wording.
+8. Check phone-size readability.
+9. Do not present for owner review until all eight checks pass.
+
+**Healthcare Post #1 accepted visual copy**
+- Headline: “Want to retire before 65... but worried about healthcare?”
+- Subhead: “The years before Medicare can be planned for.”
+- Accepted headline wrapping:
+  - Want to retire
+  - before 65...
+  - but worried about
+  - healthcare?
+- Accepted subhead wrapping:
+  - The years before Medicare
+  - can be planned for.
+
 ### Required sequence
 
 1. **Start with an authentic photograph supplied/owned by RR.**
