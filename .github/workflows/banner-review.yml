@@ -1,0 +1,44 @@
+name: Landing banner review
+on:
+  push:
+    branches: [codex/assessment-landing-2026-10-22]
+permissions:
+  contents: read
+jobs:
+  visual-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: npm install --prefix /tmp/banner-review playwright@1.63.0
+      - name: Inspect desktop and mobile banner
+        run: |
+          python3 -m http.server 4190 --bind 127.0.0.1 >/tmp/banner-server.log 2>&1 &
+          NODE_PATH=/tmp/banner-review/node_modules node <<'JS'
+          const {chromium}=require('playwright'), assert=require('node:assert/strict');
+          (async()=>{
+            const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+            for(const width of [1440,390]){
+              const page=await browser.newPage({viewport:{width,height:1000},isMobile:width<640,hasTouch:width<640});
+              await page.route('https://retirementready.kit.com/**',r=>r.abort());
+              await page.goto('http://127.0.0.1:4190',{waitUntil:'networkidle'});
+              await page.getByRole('heading',{level:1,name:'60 Second Retirement Readiness Assessment'}).waitFor();
+              assert.equal(await page.locator('.hero .logo').evaluate(i=>i.complete && i.naturalWidth>0),true);
+              assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+              const button=await page.locator('.hero .cta-link').boundingBox(),note=await page.locator('.cta-note').boundingBox();
+              assert.ok(Math.abs(button.x+button.width/2-note.x-note.width/2)<2);
+              assert.equal(await page.locator('.hero .cta-link').getAttribute('href'),'https://app.retirementready.me/welcome');
+              const hero=await page.locator('.hero').boundingBox(); if(width===1440)assert.ok(hero.height<=521);
+              console.log(JSON.stringify({width,heroHeight:hero.height,ctaBottom:button.y+button.height}));
+              await page.screenshot({path:'banner-'+width+'.png',fullPage:true});
+              await page.close();
+            }
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: landing-banner-review
+          path: banner-*.png
