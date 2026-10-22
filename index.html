@@ -16,7 +16,10 @@
     .hero-inner { display:flex; align-items:center; min-height:520px; padding:32px 0; }
     .hero-copy { width:min(680px,72%); }
     .logo { display:block; width:min(400px,100%); aspect-ratio:5.25; object-fit:cover; object-position:center; margin-bottom:18px; }
-    .assessment-title { max-width:640px; margin:0 0 16px; font-size:clamp(2rem,3vw,2.5rem); line-height:1.12; letter-spacing:-.035em; color:var(--navy); font-weight:750; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .assessment-offer { border-top:1px solid rgba(7,31,58,.18); padding-top:22px; }
+    .assessment-title { margin:0 0 10px; font-size:1.5rem; line-height:1.25; letter-spacing:-.02em; color:var(--navy); font-weight:700; }
+    .assessment-copy { margin:0 0 16px; color:#41546a; font-size:1rem; line-height:1.5; }
     .lead { max-width:620px; margin:0 0 22px; color:#41546a; font-size:clamp(1rem,1.5vw,1.12rem); line-height:1.5; }
     .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
     .pill { padding:8px 12px; border:1px solid rgba(7, 31, 58, 0.14); border-radius:999px; background:rgba(255,255,255,0.74); color:var(--navy-soft); font-size:0.86rem; font-weight:700; letter-spacing:0.015em; backdrop-filter:blur(3px); }
@@ -74,7 +77,9 @@
       .shell { width:min(100% - 28px,1180px); }
       .hero-inner { min-height:0; padding:28px 0 36px; }
       .logo { width:100%; max-width:440px; margin-bottom:24px; }
-      .assessment-title { margin-bottom:16px; font-size:clamp(1.9rem,8vw,2.5rem); line-height:1.13; }
+      .assessment-title { font-size:1.3rem; line-height:1.25; }
+      .assessment-offer { padding-top:20px; }
+      .assessment-copy { font-size:0.97rem; }
       .lead { margin-bottom:22px; font-size:1rem; line-height:1.55; }
       .pill-row { gap:7px; margin-bottom:26px; }
       .pill { padding:6px 9px; font-size:0.78rem; }
@@ -104,13 +109,17 @@
     <div class="shell hero-inner">
       <div class="hero-copy">
         <img class="logo" src="rr-logo-horizontal-tagline.png" alt="RetirementReady. A more confident tomorrow.">
-        <h1 class="assessment-title">60 Second Retirement Readiness Assessment</h1>
-        <p class="lead">Get a free first look at your retirement readiness. See how your savings, spending, and retirement timing come together.</p>
+        <h1 class="sr-only">RetirementReady</h1>
+        <p class="lead">RetirementReady is being built to help you understand how retirement timing, Social Security, taxes, spending, healthcare, and legacy goals work together.</p>
         <div class="pill-row" aria-label="RetirementReady focus areas"><span class="pill">Retirement</span><span class="pill">Social Security</span><span class="pill">Taxes</span><span class="pill">Spending</span><span class="pill">Healthcare</span><span class="pill">Legacy</span></div>
-        <div class="assessment-cta">
+        <section class="assessment-offer" aria-labelledby="assessment-title">
+          <h2 class="assessment-title" id="assessment-title">60 Second Retirement Readiness Assessment</h2>
+          <p class="assessment-copy">Take a quick assessment to gauge your retirement readiness.</p>
+          <div class="assessment-cta">
           <a class="cta-link" href="https://app.retirementready.me/welcome">Check my retirement readiness</a>
-          <p class="cta-note">Free. No account or email required.</p>
-        </div>
+            <p class="cta-note">Free. No account or email required.</p>
+          </div>
+        </section>
       </div>
     </div>
   </header>

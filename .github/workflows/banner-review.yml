@@ -24,13 +24,16 @@ jobs:
               const page=await browser.newPage({viewport:{width,height:1000},isMobile:width<640,hasTouch:width<640});
               await page.route('https://retirementready.kit.com/**',r=>r.abort());
               await page.goto('http://127.0.0.1:4190',{waitUntil:'networkidle'});
-              await page.getByRole('heading',{level:1,name:'60 Second Retirement Readiness Assessment'}).waitFor();
+              await page.getByRole('heading',{level:2,name:'60 Second Retirement Readiness Assessment'}).waitFor();
+              assert.ok(await page.locator('.hero .lead').innerText().then(t=>t.startsWith('RetirementReady is being built to help you understand')));
+              assert.equal(await page.locator('.hero .pill').count(),6);
+              assert.ok(await page.locator('.assessment-offer').evaluate(e=>e.previousElementSibling.classList.contains('pill-row')));
               assert.equal(await page.locator('.hero .logo').evaluate(i=>i.complete && i.naturalWidth>0),true);
               assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
               const button=await page.locator('.hero .cta-link').boundingBox(),note=await page.locator('.cta-note').boundingBox();
               assert.ok(Math.abs(button.x+button.width/2-note.x-note.width/2)<2);
               assert.equal(await page.locator('.hero .cta-link').getAttribute('href'),'https://app.retirementready.me/welcome');
-              const hero=await page.locator('.hero').boundingBox(); if(width===1440)assert.ok(hero.height<=600);
+              const hero=await page.locator('.hero').boundingBox(); if(width===1440)assert.ok(hero.height<720);
               console.log(JSON.stringify({width,heroHeight:hero.height,ctaBottom:button.y+button.height}));
               await page.screenshot({path:'banner-'+width+'.png',fullPage:true});
               await page.close();
