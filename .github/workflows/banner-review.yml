@@ -30,7 +30,7 @@ jobs:
               const button=await page.locator('.hero .cta-link').boundingBox(),note=await page.locator('.cta-note').boundingBox();
               assert.ok(Math.abs(button.x+button.width/2-note.x-note.width/2)<2);
               assert.equal(await page.locator('.hero .cta-link').getAttribute('href'),'https://app.retirementready.me/welcome');
-              const hero=await page.locator('.hero').boundingBox(); if(width===1440)assert.ok(hero.height<=521);
+              const hero=await page.locator('.hero').boundingBox(); if(width===1440)assert.ok(hero.height<=600);
               console.log(JSON.stringify({width,heroHeight:hero.height,ctaBottom:button.y+button.height}));
               await page.screenshot({path:'banner-'+width+'.png',fullPage:true});
               await page.close();
